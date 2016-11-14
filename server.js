@@ -40,6 +40,7 @@ app.listen(3000,function(){
 
 var Gpio = require('onoff').Gpio,
 sensor = new Gpio(17, 'in', 'both');
+console.log("The sensor should be working!");
 sensor.watch(function (err, value) {
 if (err) exit(err);
 console.log(value ? 'there is some one!' : 'not anymore!');
