@@ -32,6 +32,7 @@ This is the temp page!
 <script>
     (function (){
         var sensorLib = require('node-dht-sensor');
+        alert("Hello!")
 
 sensorLib.initialize(22, 12); //#A
 var interval = setInterval(function () { //#B
@@ -47,7 +48,7 @@ function read() {
 
 process.on('SIGINT', function () {
   clearInterval(interval);
-  console.log('Bye, bye!');
+  console.log('Later Gator!');
   process.exit();
 });
     })();
