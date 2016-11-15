@@ -6,7 +6,9 @@ sensor.watch(function (err, value) {
 if (err) exit(err);
 console.log(value ? 'there is some one!' : 'not anymore!');
 var m = document.getElementById("motionVal");
-m.value(value ? 'There is some one!': "It is lonely!");
+m.innerHTML("Hello World!");
+m.innerText("Here is a text setting!");
+m.innerHTML(value ? 'There is some one!': "It is lonely!");
 });
 function exit(err) {
 if (err) console.log('An error occurred: ' + err);
