@@ -42,7 +42,7 @@ function read() {
   var readout = sensorLib.read(); //#C
   console.log('Temperature: ' + readout.temperature.toFixed(2) + 'C, ' + //#D
     'humidity: ' + readout.humidity.toFixed(2) + '%');
-    document.getElementById("tempVal").html(readout.tempature.toFixed(2)):
+    alert(("tempVal").text(readout.temperature.toFixed(2))):
 };
 
 process.on('SIGINT', function () {
