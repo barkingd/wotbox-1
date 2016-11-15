@@ -2,7 +2,7 @@
   "name": "website-using-express",
   "version": "0.0.1",
   "scripts": {
-    "start": "concurrently \"node server.js\" \"node pir.js\""
+    "start": "concurrently \"node server.js\" \"node pir.js\" \"node dht.js\""
   },
   "dependencies": {
     "concurrently": "^3.1.0",
