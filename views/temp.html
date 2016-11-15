@@ -28,29 +28,5 @@
 This is the temp page!
 </p></div>
 </div>
-<script>
-    (function (){
-        var sensorLib = require('node-dht-sensor');
-        alert("Hello!")
-
-sensorLib.initialize(11, 12); //#A
-var interval = setInterval(function () { //#B
-  read();
-}, 2000);
-
-function read() {
-  var readout = sensorLib.read(); //#C
-  console.log('Temperature: ' + readout.temperature.toFixed(2) + 'C, ' + //#D
-    'humidity: ' + readout.humidity.toFixed(2) + '%');
-    alert("Temp Value " + readout.temperature.toFixed(2));
-};
-
-process.on('SIGINT', function () {
-  clearInterval(interval);
-  console.log('Later Gator!');
-  process.exit();
-});
-    })();
-</script>
 </body>
 </html>
