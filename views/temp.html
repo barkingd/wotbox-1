@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
-<script src="dht.js"></script>
 </head>
 <body>
 <div>
@@ -34,7 +33,7 @@ This is the temp page!
         var sensorLib = require('node-dht-sensor');
         alert("Hello!")
 
-sensorLib.initialize(22, 12); //#A
+sensorLib.initialize(11, 12); //#A
 var interval = setInterval(function () { //#B
   read();
 }, 2000);
