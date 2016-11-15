@@ -9,8 +9,6 @@ function read() {
   var readout = sensorLib.read(); //#C
   console.log('Temperature: ' + readout.temperature.toFixed(2) + 'C, ' + //#D
     'humidity: ' + readout.humidity.toFixed(2) + '%');
-   document.getElementById("tempVal").html('Temperature: ' + readout.temperature.toFixed(2) + 'C, ' + //#D
-    'humidity: ' + readout.humidity.toFixed(2) + '%');
 };
 
 process.on('SIGINT', function () {
