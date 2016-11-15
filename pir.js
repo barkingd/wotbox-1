@@ -1,7 +1,6 @@
 var Gpio = require('onoff').Gpio,
 sensor = new Gpio(17, 'in', 'both');
 //# PIR.JS Sensor
-alert("Hello World!");
 console.log("The sensor should be working!");
 sensor.watch(function (err, value) {
 if (err) exit(err);
