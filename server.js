@@ -2,6 +2,13 @@ var express = require("express");
 var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
+var httpServer = require('./servers/http');
+resources = require('./resources/model');
+
+var server = httpServer.listen(resources.pi.port, function () {
+  console.info('Your WoT Pi is up and running on port %s', 
+  resources.pi.port);
+});
 
 router.use(function (req,res,next) {
   console.log("/" + req.method);
