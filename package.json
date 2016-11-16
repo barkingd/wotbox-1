@@ -5,8 +5,10 @@
     "start": "concurrently \"node server.js\" \"node pir.js\" \"node dht.js\""
   },
   "dependencies": {
+    "ajax-request": "^1.2.1",
     "concurrently": "^3.1.0",
     "express": "^4.14.0",
+    "jquery": "^3.1.1",
     "onoff": "^1.1.1"
   }
 }
