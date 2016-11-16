@@ -8,11 +8,8 @@
     "ajax-request": "^1.2.1",
     "concurrently": "^3.1.0",
     "express": "^4.14.0",
-<<<<<<< HEAD
     "node-dht-sensor": "0.0.32",
-=======
     "jquery": "^3.1.1",
->>>>>>> 9ac7c40cf2ddfcebc5694b2cafe1212b88b25522
     "onoff": "^1.1.1"
   }
 }
