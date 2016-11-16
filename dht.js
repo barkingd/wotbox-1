@@ -10,6 +10,7 @@ function read() {
   var readout = sensorLib.read(); //#C
   var c = readout.temperature.toFixed(2);
   var fVal = ((c *9)/5)+ 32;
+  var se_new_email1;
   console.log('Temperature: ' + fVal + 'F, ' + //#D
     'humidity: ' + readout.humidity.toFixed(2) + '%');
 
@@ -21,7 +22,6 @@ function read() {
             "dataType": "json",
             "data": JSON.stringify({
                 "startData": {
-                    "se_data1": newData,
                     "se_new_email1": "sean.fiene@nintex.com"
                 }
             }), function () {
