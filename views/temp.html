@@ -25,18 +25,19 @@
 </div>
 <br/>
 <div class="jumbotron">
-  <h2>Temperature Value: <h2 id="tVal"></h2></h2>
+  <h1>Current Tempature Reading</h1>
+ <h2 id="tVal"></h2>
   <h4 id="timeVal"></h4>
 </div>
 </div>
 <script >
   setInterval(function(){
 //Get current time
-var newTime = $.now();
+var newTime = new Date();
 //call temp $ajax
 $.getJSON("http://10.136.18.26:8484/pi/sensors/temperature",
 function(data){
-$('#tVal').html(data.value);
+$('#tVal').html("The current tempature is " + (((data.value *9)/5) + 32) + " F");
 $('#timeVal').html("Tempature last read at: " + newTime);
 });
 }, 10000);
