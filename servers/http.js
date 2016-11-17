@@ -1,7 +1,7 @@
-var express = require("express");
-actuatorsRoutes = require('./../routes/actuators');
-sensorRoutes = require('./../routes/sensors');
-resources = require('./../resources/model');
+var express = require('express'),
+actuatorsRoutes = require('./../routes/actuators'),
+sensorRoutes = require('./../routes/sensors'),
+resources = require('./../resources/model'),
 cors = require('cors');
 
 var app = express();
