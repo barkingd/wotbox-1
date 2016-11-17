@@ -1,4 +1,5 @@
-var resources = require('./../../resources/model');
+var resources = require('./../../resources/model'),
+utils = require('./../../utils/utils.js');
 
 var interval, sensor;
 var model = resources.pi.sensors;
@@ -47,7 +48,7 @@ function connectHardware() {
     console.warn('Failed to initialize sensor!');
   }
 };
-/*
+
 function simulate() {
   interval = setInterval(function () {
     model.temperature.value = utils.randomInt(0, 40);
@@ -56,7 +57,7 @@ function simulate() {
   }, localParams.frequency);
   console.info('Simulated %s sensor started!', pluginName);
 };
-*/
+
 function showValue() {
   console.info('Temperature: %s C, humidity %s \%',
     model.temperature.value, model.humidity.value);
