@@ -2,7 +2,7 @@
   "name": "website-using-express",
   "version": "0.0.1",
   "scripts": {
-    "start": "concurrently \"node server.js\" \" node wot-server.js\" \"node dht.js\""
+    "start": "concurrently \"node server.js\" \" node wot-server.js\""
   },
   "dependencies": {
     "ajax-request": "^1.2.1",
