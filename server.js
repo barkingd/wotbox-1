@@ -2,7 +2,7 @@ var express = require("express");
 var app = express();
 var router = express.Router();
 var path = __dirname + '/views/';
-var httpServer = require('./servers/http');
+var httpServer = require('./servers/http'),
 resources = require('./resources/model');
 
 var server = httpServer.listen(resources.pi.port, function () {
