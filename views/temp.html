@@ -37,7 +37,8 @@ var newTime = new Date();
 //call temp $ajax
 $.getJSON("http://10.136.18.26:8484/pi/sensors/temperature",
 function(data){
-$('#tVal').html("The current tempature is " + (((data.value *9)/5) + 32) + " F");
+$('#tVal').html("The current tempature is " + (((data.value *9)/5) + 32) + " F  and " +
+(data.value) + "C." ());
 $('#timeVal').html("Tempature last read at: " + newTime);
 });
 }, 10000);
