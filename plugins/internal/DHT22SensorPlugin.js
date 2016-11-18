@@ -61,4 +61,4 @@ function simulate() {
 function showValue() {
   console.info('Temperature: %s C, humidity %s \%',
     model.temperature.value, model.humidity.value);
-};
+};  
