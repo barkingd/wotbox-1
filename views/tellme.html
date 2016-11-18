@@ -73,6 +73,36 @@
     </div>
 </form>
   </div>
+  <script>
+      $('#submit').click(function () {
+
+        var email = $('#email').val(),
+        name = $('#name').val(),
+        phone = $('#phone').val(),
+        message = $('#message').val(),
+        company = $('#company').val();
+
+        $.ajax({
+            "url": "https://ntxdemo14.workflowcloud.com/api/v1/workflow/published/2f845e0c-48e7-446d-b2ef-7e97c2231308/instances?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJOV0MiLCJ3b3JrZmxvd0lkIjoiMmY4NDVlMGMtNDhlNy00NDZkLWIyZWYtN2U5N2MyMjMxMzA4IiwidGVuYW50SWQiOiJudHhkZW1vMTQiLCJpYXQiOjE0Nzk1MDY0Njl9.9boFssk6KNo58_uhzxDMCjcKIJ44T18xfS2CdOK7Zf8",
+            "method": "POST",
+            "contentType": "application/json",
+            "dataType": "json",
+            "data": JSON.stringify({
+                "startData": {
+                    "se_name1": name,
+                    "se_email1": email,
+                    "se_phone_number1": phone,
+                    "se_message1": message,
+                    "se_company1": company
+                }
+            }), 
+        }).always(
+            function () {
+                alert("Thank you" + name + "!");
+                location.reload();
+            });
+    });
+  </script>
 </body>
 </html>
 </body>
