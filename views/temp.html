@@ -24,7 +24,7 @@
 </nav>
 </div>
 <br/>
-<div class="jumbotron">
+<div class="jumbotron" style="padding-left: 100px;">
   <h2>Current Temperature Reading</h2>
  <h2 id="tVal"></h2>
   <h4 id="timeVal"></h4>
@@ -41,7 +41,7 @@ $('#tVal').html("The current tempurature is " + (((data.value *9)/5) + 32) + " F
 (data.value) + " C");
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
-}, 10000);
+}, 1000);
 </script> 
 </body>
 </html>
