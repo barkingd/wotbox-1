@@ -9,6 +9,7 @@
         "description": "An ambient temperature sensor.",
         "unit": "celsius",
         "value": 0,
+        "type": 11,
         "gpio": 12
       },
       "humidity": {
