@@ -16,13 +16,14 @@ var newTime = new Date();
 $.getJSON('http://10.136.18.26:8484/pi/sensors/pir',
 function(data){
     var x = data.value;
+    $('#timeVal').html("Last looked at: " + newTime);
     if (x != true) {
             $('#motionVal').html("We have not detected a presence!");
     } else if (x == true) {
         $('#motionVal').html('We have detected someone! Workflow initiated!');
     }
 });
-}, 5000);
+}, 1000);
 </script>
 </head>
 <body>
