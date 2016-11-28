@@ -9,6 +9,21 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
+<script>
+setInterval(function () {
+    //Get Current Time
+var newTime = new Date();
+$.getJSON('http://10.136.18.26:8484/pi/sensors/pir',
+function(data){
+    var x = data.value;
+    if (x != true) {
+            $('#motionVal').html("We have not detected a presence!");
+    } else if (x == true) {
+        $('#motionVal').html('We have detected someone! Workflow initiated!');
+    }
+});
+}, 5000);
+</script>
 </head>
 <body>
 <div>
@@ -25,8 +40,9 @@
 </div>
 <br/>
 <div class="jumbotron">
-    <p id="motionVal">
-        So a value should go over here.</p>
+    <h2>Mark 'True' when someone appears!</h2>
+    <p id="motionVal"></p>
+    <h4 id="timeVal"></h4>
 </div>
 </div>
 </body>
