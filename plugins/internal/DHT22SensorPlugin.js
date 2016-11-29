@@ -1,5 +1,5 @@
 var resources = require('./../../resources/model'),
-utils = require('./../../utils/utils.js');
+  utils = require('./../../utils/utils.js');
 
 var interval, sensor;
 var model = resources.pi.sensors;
@@ -61,4 +61,9 @@ function simulate() {
 function showValue() {
   console.info('Temperature: %s C, humidity %s \%',
     model.temperature.value, model.humidity.value);
-};  
+};
+
+//#A Initialize the driver for DHT22 on GPIO 12 (as specified in the model)
+//#B Fetch the values from the sensors
+//#C Update the model with the new temperature and humidity values; note that all observers will be notified
+//#D Because the driver doesn’t provide interrupts, you poll the sensors for new values on a regular basis with a regular timeout function and set sensor.read() as a callback
