@@ -12,6 +12,9 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 <script>
+  $( function(){
+    $("#accordion").accordion();
+  });
 setInterval(function () {
     //Get Current Time
 var newTime = new Date();
@@ -23,7 +26,7 @@ function(data){
             $('#motionVal').html("We have not detected a presence!");
     } else if (x == true) {
         $('#motionVal').html('We have detected someone! Workflow initiated!');
-        $("#logger").append("Workflow started at " + newTime);
+        $("#logger").append("Workflow started at " + newTime +"<br />");
     }
 });
 }, 1000);
