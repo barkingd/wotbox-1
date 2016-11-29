@@ -77,10 +77,10 @@ $("#btnTest").click(function (){
   $.getJSON("http://10.136.18.26:8484/pi/sensors/temperature",
     function(data){
       cTemp = data.value;
+        hTemp = $('#numHigh').val(),
+        lTemp = $('#numLow').val();
+        console.log(cTemp + " - " + hTemp + " - " + lTemp);
     });
-  hTemp = $('#numHigh').val(),
-  lTemp = $('#numLow').val();
-  console.log(cTemp + " - " + hTemp + " - " + lTemp);
 });
 </script>
 </body>
