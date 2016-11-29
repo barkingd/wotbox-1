@@ -27,6 +27,14 @@ $('#tVal').html("The current tempurature is " + (((data.value *9)/5) + 32) + " F
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
 }, 1000);
+
+$(btnTest).click(function (){
+  var cTemp = $('#tVal').html(),
+  hTemp = $('#numHigh').val(),
+  lTemp = $('#numLow').val();
+
+  alert(cTemp + " - " + hTemp + " - " + lTemp);
+});
 </script>
 </head>
 
@@ -65,6 +73,10 @@ $('#timeVal').html("Tempurature last read at: " + newTime);
           <input type="email" id="txtEmail" placeholder="first.last@domain.com" />
           <label for="numPhone">SMS: </label>
           <input type="tel" id="numPhone" placeholder="555-555-5555" />
+        </div>
+        <h3>Test Now</h3>
+        <div>
+          <input type="button" id="btnTest" value="Run Test" />
         </div>
       </div>
 </body>
