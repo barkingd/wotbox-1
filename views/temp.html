@@ -1,17 +1,18 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<title>Workflow of Things</title>
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script src="script.js"></script>
-<script >
-$("accordion").accordion();
+  <meta charset="UTF-8">
+  <title>Workflow of Things</title>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.3/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.3/angular-route.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+$("#accordion").accordion();
   setInterval(function(){
 //Get current time
 var newTime = new Date();
@@ -23,40 +24,44 @@ $('#tVal').html("The current tempurature is " + (((data.value *9)/5) + 32) + " F
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
 }, 1000);
-</script> 
+</script>
 </head>
+
 <body>
-<div>
-<div>
-<nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
-       <ul class="nav navbar-nav">
-      <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
-      <li><a href="/about">About us</a></li>
-      <li class="active"><a href="/temp">Tempature Sensor</a></li>
-      <li><a href="/motion">Motion Sensor</a></li>
-      <li><a href="/tellme">Tell Me More</a></li>
-    </ul>
-</nav>
-</div>
-<br/>
-<div class="jumbotron"><img src="https://www.nintex.com/-/media/images/nintex/icons/icon-cloud-md.ashx?h=150&w=150&la=en&hash=0E092FECCE626AF846AE350FFA3D36EE778C7CA5" style="position: absolute; padding-left: 10px;"/><div style="position: relative; padding-left: 170px; padding-top: 35px;">
-  <h2>Current Temperature Reading</h2>
- <h2 id="tVal"></h2>
-  <h4 id="timeVal"></h4>
-</div>
-<div id="accordion">
-  <h3>Workflow Range</h3>
   <div>
-    <label for="numHigh">Temperature Range High: </label>
-    <input type="number" id="numHigh" value="75" />
-    <label for="numLow">Temperature Range for Low: </label>
-    <input type="number" id="numLow" value="65" />
-  </div>
-  <h3>Notification Settings</h3>
-<div>
-  <label for="txtEmail">Email Notification</label>
-  <input type="email" id="txtEmail" placeholder="first.last@domain.com" />
-</div>
-</div>
+    <div>
+      <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
+          <li><a href="/about">About us</a></li>
+          <li class="active"><a href="/temp">Tempature Sensor</a></li>
+          <li><a href="/motion">Motion Sensor</a></li>
+          <li><a href="/tellme">Tell Me More</a></li>
+        </ul>
+      </nav>
+    </div>
+    <br/>
+    <div class="jumbotron"><img src="https://www.nintex.com/-/media/images/nintex/icons/icon-cloud-md.ashx?h=150&w=150&la=en&hash=0E092FECCE626AF846AE350FFA3D36EE778C7CA5"
+        style="position: absolute; padding-left: 10px;" />
+      <div style="position: relative; padding-left: 170px; padding-top: 35px;">
+        <h2>Current Temperature Reading</h2>
+        <h2 id="tVal"></h2>
+        <h4 id="timeVal"></h4>
+      </div>
+      <div id="accordion">
+        <h3>Workflow Range</h3>
+        <div>
+          <label for="numHigh">Temperature Range High: </label>
+          <input type="number" id="numHigh" value="75" />
+          <label for="numLow">Temperature Range for Low: </label>
+          <input type="number" id="numLow" value="65" />
+        </div>
+        <h3>Notification Settings</h3>
+        <div>
+          <label for="txtEmail">Email Notification</label>
+          <input type="email" id="txtEmail" placeholder="first.last@domain.com" />
+        </div>
+      </div>
 </body>
+
 </html>
