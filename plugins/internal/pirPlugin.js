@@ -8,7 +8,7 @@ var localParams = {'simulate': false, 'frequencey': 2000};
 exports.start = function (params) {
     localParams = params;
     if (localParams.simulate) {
-        simulate();
+        connectHardware();
     } else {
         connectHardware();
     }

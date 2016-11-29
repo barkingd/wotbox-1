@@ -9,7 +9,7 @@ var localParams = {'simulate': false, 'frequency': 5000};
 exports.start = function (params) {
   localParams = params;
   if (params.simulate) {
-    simulate();
+    connectHardware();
     console.log("Forced Connect!");
   } else {
     connectHardware();
