@@ -73,7 +73,11 @@ $('#timeVal').html("Tempurature last read at: " + newTime);
       </div>
 <script>  
 $("#btnTest").click(function (){
-  var cTemp = $('#tVal').html(),
+  var cTemp;
+  $.getJSON("http://10.136.18.26:8484/pi/sensors/temperature",
+    function(data){
+      cTemp = data.value;
+    });
   hTemp = $('#numHigh').val(),
   lTemp = $('#numLow').val();
   console.log(cTemp + " - " + hTemp + " - " + lTemp);
