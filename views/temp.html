@@ -27,13 +27,6 @@ $('#tVal').html("The current tempurature is " + (((data.value *9)/5) + 32) + " F
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
 }, 1000);
-
-$("#btnTest").click(function (){
-  var cTemp = $('#tVal').html(),
-  hTemp = $('#numHigh').val(),
-  lTemp = $('#numLow').val();
-  console.log(cTemp + " - " + hTemp + " - " + lTemp);
-});
 </script>
 </head>
 
@@ -78,6 +71,14 @@ $("#btnTest").click(function (){
           <input type="button" id="btnTest" value="Run Test" />
         </div>
       </div>
+<script>  
+$("#btnTest").click(function (){
+  var cTemp = $('#tVal').html(),
+  hTemp = $('#numHigh').val(),
+  lTemp = $('#numLow').val();
+  console.log(cTemp + " - " + hTemp + " - " + lTemp);
+});
+</script>
 </body>
 
 </html>
