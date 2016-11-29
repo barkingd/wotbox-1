@@ -13,7 +13,9 @@
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script src="script.js"></script>
   <script>
-$("#accordion").accordion();
+  $( function(){
+    $("#accordion").accordion();
+  });
   setInterval(function(){
 //Get current time
 var newTime = new Date();
