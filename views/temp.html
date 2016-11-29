@@ -69,6 +69,7 @@ $('#timeVal').html("Tempurature last read at: " + newTime);
         <h3>Test Now</h3>
         <div>
           <input type="button" id="btnTest" value="Run Test" />
+          <p id="testVal"></p>
         </div>
       </div>
 <script>  
@@ -79,6 +80,7 @@ $("#btnTest").click(function (){
       cTemp = data.value;
         hTemp = $('#numHigh').val(),
         lTemp = $('#numLow').val();
+        $('#testVal').html(cTemp + " - " + hTemp + " - " + lTemp);
         console.log(cTemp + " - " + hTemp + " - " + lTemp);
     });
 });
