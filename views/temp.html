@@ -22,7 +22,7 @@ var newTime = new Date();
 //call temp $ajax
 $.getJSON("http://10.136.18.26:8484/pi/sensors/temperature",
 function(data){
-$('#tVal').html((((data.value *9)/5) + 32) + " F // " +
+$('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
 (data.value) + " C");
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
@@ -77,7 +77,7 @@ $("#btnTest").click(function (){
   var cTemp;
   $.getJSON("http://10.136.18.26:8484/pi/sensors/temperature",
     function(data){
-      cTemp = data.value;
+      cTemp = (((data.value *9)/5) + 32).toFixed(2);
         hTemp = $('#numHigh').val(),
         lTemp = $('#numLow').val();
         $('#testVal').html(cTemp + " - " + hTemp + " - " + lTemp);
