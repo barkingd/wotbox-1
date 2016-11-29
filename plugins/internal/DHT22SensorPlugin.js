@@ -9,8 +9,8 @@ var localParams = {'simulate': false, 'frequency': 5000};
 exports.start = function (params) {
   localParams = params;
   if (params.simulate) {
-    simulate();
-    console.log("Simulated temperature sensor!");
+    connectHardware();
+    console.log("Forced Connect!");
   } else {
     connectHardware();
     console.log("Actually connected the sensor!")
