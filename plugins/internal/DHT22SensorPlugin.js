@@ -10,8 +10,10 @@ exports.start = function (params) {
   localParams = params;
   if (params.simulate) {
     simulate();
+    console.log("Simulated temperature sensor!");
   } else {
     connectHardware();
+    console.log("Actually connected the sensor!")
   }
 };
 
