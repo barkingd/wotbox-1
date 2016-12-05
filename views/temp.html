@@ -19,8 +19,9 @@
   setInterval(function(){
 //Get current time
 var newTime = new Date();
+var vIP = $('#ip').val();
 //call temp $ajax
-$.getJSON("http://10.136.18.26:8484/pi/sensors/temperature",
+$.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
 function(data){
 $('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
 (data.value) + " C");
@@ -68,6 +69,8 @@ $('#timeVal').html("Tempurature last read at: " + newTime);
         </div>
         <h3>Test Now</h3>
         <div>
+          <label for="ip">IP: </label>
+          <input type="text" id="ip" placeholder="10.10.100.10" />
           <input type="button" id="btnTest" value="Run Test" />
           <p id="testVal"></p>
         </div>
