@@ -12,12 +12,13 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script src="script.js"></script>
 <script>
-var vIP = $('#ip').val();
+
   $( function(){
     $("#accordion").accordion();
   });
 setInterval(function () {
     //Get Current Time
+var vIP = $('#ip').val();
 var newTime = new Date();
 console.log('http://'+ vIP + '/pi/sensors/pir');
 $.getJSON('http://'+ vIP + '/pi/sensors/pir',
