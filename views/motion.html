@@ -21,7 +21,7 @@ setInterval(function () {
 var vIP = $('#ip').val();
 var newTime = new Date();
 console.log('http://'+ vIP + ':8484/pi/sensors/pir');
-$.getJSON('http://'+ vIP + '/pi/sensors/pir',
+$.getJSON('http://10.136.18.26:8484/pi/sensors/pir'
 function(data){
     var x = data.value;
     $('#timeVal').html("Last looked at: " + newTime);
