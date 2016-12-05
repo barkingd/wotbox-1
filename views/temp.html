@@ -29,8 +29,7 @@ $('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
 (data.value) + " C");
 
 //configure workflow variables
-var status = (status == true) ? true : false;
- 
+var status = (status == true) ? true : false,
 t = (((data.value *9)/5) + 32).toFixed(2),
 hT = $('#numHigh').val(),
 lT = $('#numLow').val(),
