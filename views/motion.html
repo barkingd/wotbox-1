@@ -19,6 +19,7 @@ var vIP = $('#ip').val();
 setInterval(function () {
     //Get Current Time
 var newTime = new Date();
+console.log('http://'+ vIP + '/pi/sensors/pir');
 $.getJSON('http://'+ vIP + '/pi/sensors/pir',
 function(data){
     var x = data.value;
