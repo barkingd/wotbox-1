@@ -42,14 +42,14 @@ if((t >= hT || t <= lT) && status == false) {
   $.ajax({
       "url": "https://ntxdemo14.workflowcloud.com/api/v1/workflow/published/e1b8aa03-da1d-47f7-a0d4-8e011a79327b/instances?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJOV0MiLCJ3b3JrZmxvd0lkIjoiZTFiOGFhMDMtZGExZC00N2Y3LWEwZDQtOGUwMTFhNzkzMjdiIiwidGVuYW50SWQiOiJudHhkZW1vMTQiLCJpYXQiOjE0ODA5Nzk5Mzd9.gjrQ3L2e_ANaRTIOw9YtB5BzXYN6ZrMginvKipNN4Yg", 
       "method": "POST",
-      "contentType": "appplication/json",
+      "contentType": "application/json",
       "dataType": "json",
       "data": JSON.stringify({
         "startData": {
           "se_phone_number1": pNumber,
           "se_email1": email
         }
-      })
+      }),
   });
 }
 
