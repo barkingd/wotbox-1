@@ -51,10 +51,11 @@ if((t >= hT || t <= lT) && status == false) {
         }
       }),
   }).always(
-    setTimeout(function () {
-      console.log("I'm Sleepy!");
-    }, 30000);
-)
+    setTimeOut(function (){
+      console.log("Nap Time!");
+    }), 3000
+  )}
+
 
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
