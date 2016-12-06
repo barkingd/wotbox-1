@@ -50,6 +50,12 @@ if((t >= hT || t <= lT) && status == false) {
           "se_email1": email
         }
       }),
+  }).always({
+    setTimeout(goToSleep, 10000);
+
+    function goToSleep(){
+      console.log("Pause for duration of ten seconds");
+    }
   });
 }
 
