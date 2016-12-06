@@ -51,12 +51,10 @@ if((t >= hT || t <= lT) && status == false) {
         }
       }),
   }).always({
-    setTimeout(goToSleep, 30000)
-
-    function goToSleep(){
-      console.log("Pause for duration of ten seconds");
-    }
-  });
+    setTimeout(function(){
+      console.log("I'm Sleepy!");
+    }, 30000
+  );
 }
 
 $('#timeVal').html("Tempurature last read at: " + newTime);
