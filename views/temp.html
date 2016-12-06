@@ -50,12 +50,12 @@ if((t >= hT || t <= lT) && status == false) {
           "se_email1": email
         }
       }),
-  }).always({
+  }).always(
     setTimeout(function(){
       console.log("I'm Sleepy!");
     }, 30000
   );
-}
+);
 
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
