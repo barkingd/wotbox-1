@@ -15,20 +15,24 @@
 <div>
 <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
        <ul class="nav navbar-nav">
-      <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
+      <li><a href="/">Home<span class="sr-only">(current)</span></a></li>
       <li><a href="/about">About us</a></li>
       <li><a href="/temp">Temperature Sensor</a></li>
       <li><a href="/motion">Motion Sensor</a></li>
       <li><a href="/tellme">Tell Me More</a></li>
-      <li><a href="/settings">Settings</a></li>
+      <li class="active"><a href="/settings">Settings</a></li>
     </ul>
 </nav>
 </div>
 <br/>
-<div class="jumbotron"><img src="https://www.nintex.com/-/media/images/nintex/icons/icon-workflow-cloud-md.ashx" style="position: absolute; padding-left: 10px;"/> <p style="position: relative; padding-left: 170px; padding-top: 35px;">Nintex Workflow Cloud™ is a state-of-the-art cloud workflow platform 
-  that gives you an intuitive and powerful set of capabilities to help build workflow 
-  processes regardless of the underlying information source.
-</p></div>
+<div class="jumbotron">
+    <label for="ip">IP Address</label>
+    <input type="text" id="ip" />
+    <label for="phone">Phone Number</label>
+    <input type="text" id="phone" />
+    <label for="email">Email</label>
+    <input type="text" id="email" />
+    <input type="button" value="confirm" id="confirm" />
 </div>
 </body>
 </html>

@@ -17,6 +17,8 @@
     $("#accordion").accordion();
   });
   setInterval(function(){
+var x = localStorage.getItem("ipAddress");
+alert(x);
 
 //Get current time
 var newTime = new Date();
@@ -53,8 +55,8 @@ if((t >= hT || t <= lT) && status == false) {
   }).always(
     setTimeOut(function (){
       console.log("Nap Time!");
-    }), 3000
-  )}
+    }), 30000
+  );}
 
 
 $('#timeVal').html("Tempurature last read at: " + newTime);
