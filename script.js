@@ -1,6 +1,5 @@
 $(document).load(function () {
     $('#confirm').click(function () {
-        function storeSettings() {
             if (typeof (Storage) !== "undefined") {
                 //set IP Address
                 console.log("adding values!");
@@ -14,7 +13,6 @@ $(document).load(function () {
                 console.warn("Your browser does not support Web Storage!");
                 alert("Your browser does not support Web Storage!");
             }
-        }
     });
 });
 

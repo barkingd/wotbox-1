@@ -9,8 +9,7 @@
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <script>
-$('#confirm').click(function () {
-        function storeSettings() {
+    $('#confirm').click(function () {
             if (typeof (Storage) !== "undefined") {
                 //set IP Address
                 console.log("adding values!");
@@ -24,7 +23,6 @@ $('#confirm').click(function () {
                 console.warn("Your browser does not support Web Storage!");
                 alert("Your browser does not support Web Storage!");
             }
-        }
     });
 </script>
 </head>
