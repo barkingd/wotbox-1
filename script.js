@@ -1,7 +1,5 @@
 $(document).load(function () {
-    $('#confirm').click(function () {
-        storeSettings();
-    });
+    $('#confirm').click(storeSettings);
 
     function storeSettings() {
         if (typeof (Storage) !== "undefined") {
