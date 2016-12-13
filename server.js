@@ -28,6 +28,10 @@ router.get("/tellme", function(req, res){
     res.sendFile(path + "tellme.html");
 });
 
+router.get("/settings", function(req, res){
+  res.sendFile(path + "settings.html");
+});
+
 app.use("/",router);
 
 app.use("*",function(req,res){
