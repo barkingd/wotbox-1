@@ -16,14 +16,11 @@
   $( function(){
     $("#accordion").accordion();
   });
-  var x = localStorage.getItem("ipAddress");
-  alert(x);
   setInterval(function(){
-
 
 //Get current time
 var newTime = new Date();
-var vIP = $('#ip').val();
+var vIP = localStorage.getItem("ipAddress");
 
 //call temp $ajax
 $.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
@@ -36,8 +33,8 @@ var status = (status == true) ? true : false,
 t = (((data.value *9)/5) + 32).toFixed(2),
 hT = $('#numHigh').val(),
 lT = $('#numLow').val(),
-email = $('#txtEmail').val();
-pNumber = $('#numPhone').val();
+email = localStorage.getItem("email"),
+pNumber = localStorage.getItem("phone");
 
 
 if((t >= hT || t <= lT) && status == false) {
@@ -62,7 +59,7 @@ if((t >= hT || t <= lT) && status == false) {
 
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
-}, 1000);
+}, 10000);
 </script>
 </head>
 
@@ -96,17 +93,8 @@ $('#timeVal').html("Tempurature last read at: " + newTime);
           <label for="numLow">Temp for Low: </label>
           <input type="number" id="numLow" value="65" />
         </div>
-        <h3>Notification Settings</h3>
-        <div>
-          <label for="txtEmail">Email: </label>
-          <input type="email" id="txtEmail" placeholder="first.last@domain.com" />
-          <label for="numPhone">SMS: </label>
-          <input type="tel" id="numPhone" placeholder="555-555-5555" />
-        </div>
         <h3>Test Now</h3>
         <div>
-          <label for="ip">IP: </label>
-          <input type="text" id="ip" placeholder="10.10.100.10" />
           <input type="button" id="btnTest" value="Run Test" />
           <p id="testVal"></p>
         </div>
