@@ -8,23 +8,6 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-<script>
-    $('#confirm').click(function () {
-            if (typeof (Storage) !== "undefined") {
-                //set IP Address
-                console.log("adding values!");
-                var vIP = $('#ip').val();
-                var vPhone = $('#phone').val();
-                var vEmail = $('#email').val();
-                localStorage.setItem("ipAddress", vIP);
-                localStorage.setItem("phone", vPhone);
-                localStorage.setItem("email", vEmail);
-            } else {
-                console.warn("Your browser does not support Web Storage!");
-                alert("Your browser does not support Web Storage!");
-            }
-    });
-</script>
 </head>
 <body>
 <div>
@@ -50,5 +33,23 @@
     <input type="text" id="email" />
     <input type="button" value="confirm" id="confirm" />
 </div>
+<script>
+    $('#confirm').click(function () {
+        console.log("Click Event!");
+            if (typeof (Storage) !== "undefined") {
+                //set IP Address
+                console.log("adding values!");
+                var vIP = $('#ip').val();
+                var vPhone = $('#phone').val();
+                var vEmail = $('#email').val();
+                localStorage.setItem("ipAddress", vIP);
+                localStorage.setItem("phone", vPhone);
+                localStorage.setItem("email", vEmail);
+            } else {
+                console.warn("Your browser does not support Web Storage!");
+                alert("Your browser does not support Web Storage!");
+            }
+    });
+</script>
 </body>
 </html>
