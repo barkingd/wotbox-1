@@ -42,7 +42,7 @@ console.log("'" + extURL + "'");
 if((t >= hT || t <= lT) && status == false) {
   status = true;
   $.ajax({
-      "url": 'extURL', 
+      "url": '"' + extURL + "'", 
       "method": "POST",
       "contentType": "application/json",
       "dataType": "json",
