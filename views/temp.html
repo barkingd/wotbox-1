@@ -11,7 +11,6 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-  <script src="script.js"></script>
   <script>
   $( function(){
     $("#accordion").accordion();
@@ -35,12 +34,13 @@ hT = $('#numHigh').val(),
 lT = $('#numLow').val(),
 email = localStorage.getItem("email"),
 pNumber = localStorage.getItem("phone");
+var extURL = localStorage.getItem("extStartTemp");
 
 
 if((t >= hT || t <= lT) && status == false) {
   status = true;
   $.ajax({
-      "url": "https://ntxdemo14.workflowcloud.com/api/v1/workflow/published/e1b8aa03-da1d-47f7-a0d4-8e011a79327b/instances?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJOV0MiLCJ3b3JrZmxvd0lkIjoiZTFiOGFhMDMtZGExZC00N2Y3LWEwZDQtOGUwMTFhNzkzMjdiIiwidGVuYW50SWQiOiJudHhkZW1vMTQiLCJpYXQiOjE0ODA5Nzk5Mzd9.gjrQ3L2e_ANaRTIOw9YtB5BzXYN6ZrMginvKipNN4Yg", 
+      "url": '"' +extURL + '"', 
       "method": "POST",
       "contentType": "application/json",
       "dataType": "json",
@@ -102,7 +102,7 @@ $('#timeVal').html("Tempurature last read at: " + newTime);
       <script>  
 $("#btnTest").click(function (){
   var cTemp;
-  $.getJSON("http://10.136.18.26:8484/pi/sensors/temperature",
+  $.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
     function(data){
       cTemp = (((data.value *9)/5) + 32).toFixed(2);
         hTemp = $('#numHigh').val(),
