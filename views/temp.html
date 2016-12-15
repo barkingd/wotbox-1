@@ -28,8 +28,7 @@ $('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
 (data.value) + " C");
 
 //configure workflow variables
-var status = false;
-
+var status = false,
 t = (((data.value *9)/5) + 32).toFixed(2),
 hT = $('#numHigh').val(),
 lT = $('#numLow').val(),
@@ -37,6 +36,8 @@ email = localStorage.getItem("email"),
 pNumber = localStorage.getItem("phone"),
 extURL = localStorage.getItem("extStartTemp");
 console.log("Started new loop!");
+console.log(extURL);
+console.log("'" + extURL + "'");
 
 if((t >= hT || t <= lT) && status == false) {
   status = true;
@@ -54,13 +55,14 @@ if((t >= hT || t <= lT) && status == false) {
   }).always(
     setTimeout(function (){
       console.log("Nap Time!");
+ //     return false;
     }), 60000
   );}
 
 
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
-}, 10000);
+}, 60000);
 </script>
 </head>
 
