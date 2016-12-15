@@ -34,6 +34,8 @@
     <input type="button" value="confirm" id="confirm" />
 </div>
 <script>
+var x = localStorage.getItem("ipAddress");
+$('#ip').val(x);
     $('#confirm').click(function () {
         console.log("Click Event!");
             if (typeof (Storage) !== "undefined") {
