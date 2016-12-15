@@ -34,16 +34,16 @@ hT = $('#numHigh').val(),
 lT = $('#numLow').val(),
 email = localStorage.getItem("email"),
 pNumber = localStorage.getItem("phone"),
-extURL = localStorage.getItem("extStartTemp"),
-u = '"' + extURL + '"';
+extURL = localStorage.getItem("extStartTemp");
+//u = '"' + extURL + '"';
 console.log("Started new loop!");
-console.log(u);
-console.log('"' + extURL + '"');
+//console.log(u);
+//console.log('"' + extURL + '"');
 
 if((t >= hT || t <= lT) && status == false) {
   status = true;
   $.ajax({
-      "url": u, 
+      "url": extURL, 
       "method": "POST",
       "contentType": "application/json",
       "dataType": "json",
