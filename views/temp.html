@@ -34,7 +34,8 @@ hT = $('#numHigh').val(),
 lT = $('#numLow').val(),
 email = localStorage.getItem("email"),
 pNumber = localStorage.getItem("phone"),
-extURL = localStorage.getItem("extStartTemp");
+extURL = localStorage.getItem("extStartTemp"),
+txtTemp = String(t);
 //u = '"' + extURL + '"';
 console.log("Started new loop!");
 //console.log(u);
@@ -51,7 +52,7 @@ if((t >= hT || t <= lT) && status == false) {
         "startData": {
           "se_phone_number1": pNumber,
           "se_email1": email,
-          "se_temp1": t
+          "se_temp1": txtTemp
         }
       }),
   }).always(
