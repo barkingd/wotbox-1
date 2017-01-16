@@ -44,18 +44,18 @@ console.log("Started new loop!");
 if((t >= hT || t <= lT) && status == false) {
   status = true;
   $.ajax({
-      "url": extURL, 
-      "method": "POST",
-      "contentType": "application/json",
-      "dataType": "json",
-      "data": ({
+      url: extURL, 
+      method: "POST",
+      "content-type": "application/json",
+      dataType: "json",
+      data: {
         startData: {
           se_dec_temp1: t,
           se_phone_number1: pNumber,
           se_email1: email,
           se_temp1: txtTemp
         }
-      }),
+      },
   }).always(
     setTimeout(function (){
       console.log("Nap Time!");
