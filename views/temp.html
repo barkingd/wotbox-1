@@ -40,7 +40,7 @@ txtTemp = String(t);
 console.log("Started new loop!");
 //console.log(u);
 //console.log('"' + extURL + '"');
-var decT = t.toString().parseInt().toFixed(2);
+var decT = parseFloat(t);
 if((t >= hT || t <= lT) && status == false) {
   status = true;
   $.ajax({
