@@ -15,7 +15,8 @@
  $( function(){
     $("#accordion").accordion();
   });
- var chkInterval = setInterval(function(){
+  
+  var chkInterval = setInterval(function(){
 
 //Get current time
 var newTime = new Date();
@@ -59,7 +60,7 @@ if((t >= hT || t <= lT) && status == false) {
       error: function (err) {
         console.log(err.status);
         if (err.status == 202){
-          myStopFunction;
+          myStopFunction();
           console.log("The interval should clear!");
           }
         }
