@@ -15,7 +15,7 @@
  $( function(){
     $("#accordion").accordion();
   });
-  setInterval(function(){
+ var chkInterval = setInterval(function(){
 
 //Get current time
 var newTime = new Date();
@@ -59,7 +59,8 @@ if((t >= hT || t <= lT) && status == false) {
       error: function (err) {
         console.log(err.status);
         if (err.status == 202){
-          clearInterval();
+          myStopFunction;
+          console.log("The interval should clear!");
           }
         }
       }
@@ -69,6 +70,10 @@ if((t >= hT || t <= lT) && status == false) {
 $('#timeVal').html("Tempurature last read at: " + newTime);
 });
 }, 10000);
+
+function myStopFunction(){
+  clearInterval(chkInterval);
+}
 </script>
 </head>
 
