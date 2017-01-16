@@ -57,10 +57,16 @@ if((t >= hT || t <= lT) && status == false) {
         }
       }),
   }).always(
-    setTimeout(function (){
-      console.log("Nap Time!");
- //     return false;
-    }), 10000
+  (function (err){
+if (err.status == "202") {
+  console.log("Request has been accepted with status: " + err.status + ", now we wait");
+  setTimeout(function() {
+    console.log("Waiting Now")
+  }, 60000);
+} else {
+  console.log("Guess that didn't work!")
+}
+  })()
   );}
 
 
