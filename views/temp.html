@@ -56,18 +56,10 @@ if((t >= hT || t <= lT) && status == false) {
           se_temp1: txtTemp
         }
       }),
-  }).error(
-  (function (err){
-if (err.status == "202") {
-  console.log("Request has been accepted with status: " + err.status + ", now we wait");
-  setTimeout(function() {
-    console.log("Waiting Now")
-  }, 60000);
-} else {
-  console.log("Guess that didn't work!")
-}
-  })()
-  );}
+      error: function (err) {
+        console.log(err.status);
+      }
+});}
 
 
 $('#timeVal').html("Tempurature last read at: " + newTime);
