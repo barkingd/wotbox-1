@@ -40,7 +40,7 @@ txtTemp = String(t);
 console.log("Started new loop!");
 //console.log(u);
 //console.log('"' + extURL + '"');
-
+var decT = t.toString().parseInt().toFixed(2);
 if((t >= hT || t <= lT) && status == false) {
   status = true;
   $.ajax({
@@ -50,7 +50,7 @@ if((t >= hT || t <= lT) && status == false) {
       dataType: "json",
       data: {
         startData: {
-          se_dec_temp1: t.parseInt().toFixed(2),
+          se_dec_temp1: decT,
           se_phone_number1: pNumber,
           se_email1: email,
           se_temp1: txtTemp
