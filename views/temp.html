@@ -38,7 +38,7 @@ pNumber = localStorage.getItem("phone"),
 extURL = localStorage.getItem("extStartTemp"),
 txtTemp = String(t);
 //u = '"' + extURL + '"';
-console.log("Started new loop!");
+//console.log("Started new loop!");
 //console.log(u);
 //console.log('"' + extURL + '"');
 var decT = parseFloat(t);
@@ -61,7 +61,7 @@ if((t >= hT || t <= lT) && status == false) {
         console.log(err.status);
         if (err.status == 202){
           myStopFunction();
-          console.log("The interval should clear!");
+   //       console.log("The interval should clear!");
           }
         }
       }
