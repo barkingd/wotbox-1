@@ -58,8 +58,12 @@ if((t >= hT || t <= lT) && status == false) {
       }),
       error: function (err) {
         console.log(err.status);
+        if (err.status == 202){
+          clearInterval();
+          }
+        }
       }
-});}
+)}
 
 
 $('#timeVal').html("Tempurature last read at: " + newTime);
