@@ -23,6 +23,7 @@ var newTime = new Date();
 var vIP = localStorage.getItem("ipAddress");
 
 //call temp $ajax
+//Testing a change
 $.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
 function(data){
 $('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
