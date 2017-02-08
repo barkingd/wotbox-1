@@ -61,7 +61,7 @@ function simulate() {
 };
 
 function showValue() {
-  console.info('Temperature: %s C, humidity %s \%',
+  console.info('Wells Fargo Arena Temperature: %s C, humidity %s \%',
     model.temperature.value, model.humidity.value);
 };
 
