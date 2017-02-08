@@ -11,7 +11,7 @@ function read() {
   var c = readout.temperature.toFixed(2);
   var fVal = ((c *9)/5)+ 32;
   var se_new_email1;
-  console.log('Temperature: ' + fVal + 'F, ' + //#D
+  console.log('Wells Fargo Arena Temperature: ' + fVal + 'F, ' + //#D
     'humidity: ' + readout.humidity.toFixed(2) + '%');
 };
 
