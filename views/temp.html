@@ -34,7 +34,7 @@ $.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
 function(data)
 {
 $('#tVal').html("Temperature" + (((data.value *9)/5) + 32).toFixed(2) + " Humidity " +
-(hdata.value));
+(hdata.valuetoFixed(2)));
 
 
 
