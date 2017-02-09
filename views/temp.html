@@ -22,11 +22,20 @@
 var newTime = new Date();
 var vIP = localStorage.getItem("ipAddress");
 
+
 //call temp $ajax
 $.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
-function(data){
+function(data)
+{
 $('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
 (data.value) + " C");
+
+//call temp $ajax
+$.getJSON("http://" + vIP + ":8484/pi/sensors/humidity",
+function(hdata)
+{
+$('#hVal').html(hdata.value.toFixed(2));});
+
 
 //configure workflow variables
 var status = false,
@@ -37,6 +46,7 @@ email = localStorage.getItem("email"),
 pNumber = localStorage.getItem("phone"),
 extURL = localStorage.getItem("extStartTemp"),
 txtTemp = String(t);
+txtHumidity = hdata.value.toFixed(2);
 //u = '"' + extURL + '"';
 console.log("Started new loop!");
 //console.log(u);
@@ -54,7 +64,8 @@ if((t >= hT || t <= lT) && status == false) {
           se_dec_temp1: decT,
           se_phone_number1: pNumber,
           se_email1: email,
-          se_temp1: txtTemp
+          se_temp1: txtTemp,
+          se_humidity1: txtHumidity
         }
       }),
       error: function (err) {
@@ -66,11 +77,11 @@ if((t >= hT || t <= lT) && status == false) {
         }
       }
 )}
-
-
 $('#timeVal').html("Temperature last read at: " + newTime);
 });
-}, 1000);
+}
+
+, 1000);
 
 function myStopFunction(){
   clearInterval(chkInterval);
