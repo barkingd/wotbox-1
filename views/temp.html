@@ -12,79 +12,70 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
   <script>
-    $(function () {
-      $("#accordion").accordion();
-    });
+ $( function(){
+    $("#accordion").accordion();
+  });
+  
+  var chkInterval = setInterval(function(){
 
-    var chkInterval = setInterval(function () {
+//Get current time
+var newTime = new Date();
+var vIP = localStorage.getItem("ipAddress");
 
-          //Get current time
-          var newTime = new Date();
-          var vIP = localStorage.getItem("ipAddress");
+//call temp $ajax
+$.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
+function(data){
+$('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
+(data.value) + " C");
 
-          //call temp $ajax
-          $.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
-            function (data) {
-              $('#tVal').html((((data.value * 9) / 5) + 32).toFixed(2) + " F // " +
-                (data.value) + " C");
-
-              //call temp $ajax
-              $.getJSON("http://" + vIP + ":8484/pi/sensors/humidity",
-                function (hdata) {
-                  $('#hVal').html(hdata.value.toFixed(2) + " %");
-                
-
-                //configure workflow variables
-                var status = false,
-                  t = (((data.value * 9) / 5) + 32).toFixed(2),
-
-                  hT = $('#numHigh').val(),
-                  lT = $('#numLow').val(),
-                  email = localStorage.getItem("email"),
-                  pNumber = localStorage.getItem("phone"),
-                  extURL = localStorage.getItem("extStartTemp"),
-                  txtTemp = String(t),
-                  txtHum = hdata.value.toFixed(2) + ' %';
-                //txtHumidity = string
-                //u = '"' + extURL + '"';
-                console.log("Started new loop!");
-                //console.log(u);
-                //console.log('"' + extURL + '"');
-                var decT = parseFloat(t);
-                if ((t >= hT || t <= lT) && status == false) {
-                  status = true;
-                  $.ajax({
-                    url: extURL,
-                    method: "POST",
-                    contentType: "application/json",
-                    dataType: "json",
-                    data: JSON.stringify({
-                      startData: {
-                        se_dec_temp1: decT,
-                        se_phone_number1: pNumber,
-                        se_email1: email,
-                        se_temp1: txtTemp,
-                        se_humidity1: txtHum
-                      }
-                    }),
-                    error: function (err) {
-                      console.log(err.status);
-                      if (err.status == 202) {
-                        myStopFunction();
-                        //       console.log("The interval should clear!");
-                      }
-                    }
-                  })
-                }
-
-                $('#timeVal').html("Temperature last read at: " + newTime);
-              });
-          }, 1000);
-
-        function myStopFunction() {
-          clearInterval(chkInterval);
+//configure workflow variables
+var status = false,
+t = (((data.value *9)/5) + 32).toFixed(2),
+hT = $('#numHigh').val(),
+lT = $('#numLow').val(),
+email = localStorage.getItem("email"),
+pNumber = localStorage.getItem("phone"),
+extURL = localStorage.getItem("extStartTemp"),
+txtTemp = String(t);
+//u = '"' + extURL + '"';
+console.log("Started new loop!");
+//console.log(u);
+//console.log('"' + extURL + '"');
+var decT = parseFloat(t);
+if((t >= hT || t <= lT) && status == false) {
+  status = true;
+  $.ajax({
+      url: extURL, 
+      method: "POST",
+      contentType: "application/json",
+      dataType: "json",
+      data: JSON.stringify({
+        startData: {
+          se_dec_temp1: decT,
+          se_phone_number1: pNumber,
+          se_email1: email,
+          se_temp1: txtTemp
         }
-  </script>
+      }),
+      error: function (err) {
+        console.log(err.status);
+        if (err.status == 202){
+          myStopFunction();
+   //       console.log("The interval should clear!");
+          }
+        }
+      }
+)}
+
+
+$('#timeVal').html("Temperature last read at: " + newTime);
+});
+}, 1000);
+
+function myStopFunction(){
+  clearInterval(chkInterval);
+}
+</script>
 </head>
 
 <body>
@@ -107,7 +98,6 @@
       <div style="position: relative; padding-left: 170px; padding-top: 20px;">
         <h2>Current Temperature Reading</h2>
         <h2 id="tVal"></h2>
-        <h2 id="hval"></h2>
         <h4 id="timeVal"></h4>
       </div>
       <div id="accordion">
@@ -124,20 +114,20 @@
           <p id="testVal"></p>
         </div>
       </div>
-      <script>
-        $("#btnTest").click(function () {
-          var cTemp;
-          var vIP = localStorage.getItem("ipAddress");
-          $.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
-            function (data) {
-              cTemp = (((data.value * 9) / 5) + 32).toFixed(2);
-              hTemp = $('#numHigh').val(),
-                lTemp = $('#numLow').val();
-              $('#testVal').html(cTemp + " - " + hTemp + " - " + lTemp);
-              console.log(cTemp + " - " + hTemp + " - " + lTemp);
-            });
-        });
-      </script>
+      <script>  
+$("#btnTest").click(function (){
+  var cTemp;
+  var vIP = localStorage.getItem("ipAddress");
+  $.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
+    function(data){
+      cTemp = (((data.value *9)/5) + 32).toFixed(2);
+        hTemp = $('#numHigh').val(),
+        lTemp = $('#numLow').val();
+        $('#testVal').html(cTemp + " - " + hTemp + " - " + lTemp);
+        console.log(cTemp + " - " + hTemp + " - " + lTemp);
+    });
+});
+</script>
 </body>
 
 </html>
