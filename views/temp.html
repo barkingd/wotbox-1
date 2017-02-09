@@ -31,7 +31,7 @@
               //call temp $ajax
               $.getJSON("http://" + vIP + ":8484/pi/sensors/humidity",
                 function (hdata) {
-                  $('#hVal').html(hdata.value.toFixed(2) + '%');
+                  $('#hVal').html(hdata.value.toFixed(2) + " %");
                 
 
                 //configure workflow variables
@@ -76,7 +76,6 @@
                     }
                   })
                 }
-
 
                 $('#timeVal').html("Temperature last read at: " + newTime);
               });
