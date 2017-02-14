@@ -23,8 +23,19 @@ var newTime = new Date();
 var vIP = localStorage.getItem("ipAddress");
 
 //call temp $ajax
-$.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
-function(data){
+$.getJSON
+("http://" + vIP + ":8484/pi/sensors/humidity",
+  function(hdata)
+  { 
+    $('#hVal').html(hdata.value.toFixed(2));
+  }
+);
+
+//call temp $ajax
+$.getJSON
+("http://" + vIP + ":8484/pi/sensors/temperature",
+function(data)
+{
 $('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
 (data.value) + " C");
 
