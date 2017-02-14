@@ -22,21 +22,22 @@
 var newTime = new Date();
 var vIP = localStorage.getItem("ipAddress");
 
-//call temp $ajax
-$.getJSON("http://" + vIP + ":8484/pi/sensors/humidity",
-function(hdata)
-{
-$('#hVal').html(hdata.value.toFixed(2));
-});
 
 //call temp $ajax
 $.getJSON("http://" + vIP + ":8484/pi/sensors/temperature",
 function(data)
 {
-$('#tVal').html("Temperature" + (((data.value *9)/5) + 32).toFixed(2) + " Humidity " +
-(hdata.valuetoFixed(2)));
+$('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
+(data.value) + " C");
 
-
+//call temp $ajax
+$.getJSON
+("http://" + vIP + ":8484/pi/sensors/humidity",
+  function(hdata)
+  { 
+    $('#hVal').html(hdata.value.toFixed(2));
+  }
+);
 
 
 //configure workflow variables
@@ -110,7 +111,7 @@ function myStopFunction(){
         style="position: absolute; padding-left: 10px;" />
       <div style="position: relative; padding-left: 170px; padding-top: 20px;">
         <h2>Current Temperature Reading</h2>
-        <h2 id="tVal"></h2>
+        <h2 id="hVal"></h2>
         <h4 id="timeVal"></h4>
       </div>
       <div id="accordion">
