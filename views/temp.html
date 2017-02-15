@@ -22,12 +22,14 @@
 var newTime = new Date();
 var vIP = localStorage.getItem("ipAddress");
 
+
 //call temp $ajax
 $.getJSON
 ("http://" + vIP + ":8484/pi/sensors/humidity",
   function(hdata)
   { 
     $('#hVal').html(hdata.value.toFixed(2));
+    var txtHumidity = hdata.value.toFixed(2)
   }
 );
 
@@ -36,8 +38,7 @@ $.getJSON
 ("http://" + vIP + ":8484/pi/sensors/temperature",
 function(data)
 {
-$('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " +
-(data.value) + " C");
+$('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " + txtHumidity );
 
 //configure workflow variables
 var status = false,
