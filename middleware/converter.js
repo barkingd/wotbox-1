@@ -4,7 +4,7 @@ var msgpack = require('msgpack5')(),
 
 module.exports = function() { 
   return function (req, res, next) {
-    console.info('Representation converter middleware called!');
+    //console.info('Representation converter middleware called!');
 
     if (req.result) { 
       if (req.accepts('json')) { 
