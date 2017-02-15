@@ -38,7 +38,7 @@ $.getJSON
 ("http://" + vIP + ":8484/pi/sensors/temperature",
 function(data)
 {
-$('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " + txtHumidity );
+$('#tVal').html((((data.value *9)/5) + 32).toFixed(2) + " F // " + "TEST HUMIDITY VALUE" );
 
 //configure workflow variables
 var status = false,
